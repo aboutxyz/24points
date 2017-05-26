@@ -11,12 +11,23 @@ operator = ["+","-","*","/"]
 # for i in permutations(numlist,4):
     # print i
 
-test = [1,2,3,4]
+result = []
 strtest = ["1","2","3","4"]
 strtest.insert(1,"+")
-strtest.insert(3,"-")
+strtest.insert(3,"+")
 strtest.insert(5,"+")
-print eval("".join(strtest))
+for i in permutations(operator,3):
+    strtest[1] = i[0]
+    strtest[3] = i[1]
+    strtest[5] = i[2]
+    print strtest
+    try:
+        if eval("".join(strtest)) == 24:
+            result.append(strtest)
+    except:
+        pass
+        
+print result
     
     
 
